@@ -9,7 +9,15 @@
     <h1 style="text-align: center;">Webboard GungGing</h1>
     <hr>
     <div style="text-align: center;">
-        ต้องการดูกระทู้หมายเลข <?php echo $_GET['id']; ?> <br>
+        <?php
+          $num = $_GET['id'];
+          echo "ต้องการดูกระทู้หมายเลข $_GET[id]<br>"; 
+          if($num % 2== 0){
+            echo"เป็นกระทู้หมายเลขคู่";
+          }else{
+            echo"เป็นกระทู้หมายเลขคี่";
+          }
+         ?> <br>
 </div>
 <br>
  <form>
@@ -20,6 +28,6 @@
     </table>
  </form>
  <br>
- <div style="text-align: center;"><a href="index.html">กลับไปสู่หน้าหลัก</a> </div>
+ <div style="text-align: center;"><a href="index.php">กลับไปสู่หน้าหลัก</a> </div>
 </body>
 </html>
