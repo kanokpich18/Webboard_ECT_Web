@@ -42,6 +42,19 @@ session_start();
    
   </div>
 </nav>
+<div>
+  <label>หมวดหมู่</label>
+   <span class="dropdown">
+   <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    --ทั้งหมด--
+   </button>
+   <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">ทั้งหมด</a></li>
+    <li><a class="dropdown-item" href="#">เรื่องเรียน</a></li>
+    <li><a class="dropdown-item" href="#">เรื่องทั่วไป</a></li>
+  </ul>
+</span>
+</div>
     <form action="#">
         หมวดหมู่:
         <select >
