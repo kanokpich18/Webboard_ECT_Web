@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2024 at 10:46 AM
+-- Generation Time: Mar 06, 2024 at 11:05 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -32,6 +32,15 @@ CREATE TABLE `category` (
   `name` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'เรื่องทั่วไป'),
+(2, 'เรื่องเรียน'),
+(3, 'เรื่องกีฬา');
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +54,20 @@ CREATE TABLE `comment` (
   `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `content`, `post_date`, `user_id`, `post_id`) VALUES
+(1, 'อ่านให้รู้เรื่องทำไงครับ', '2024-03-06 15:38:34', 1, 0),
+(2, 'มีใครพิมพ์ไม่ทันเหมือนเราบ้าง ไม่รู้ว่าเราพิมพ์ช้าหรืออาจารย์สอนเร็วเลย', '2024-03-06 16:13:23', 1, 0),
+(3, 'เราก็พิมพ์ตามอาจารย์ไม่ทันเหมือนกัน\r\n', '2024-03-06 16:44:52', 2, 0),
+(4, 'เราพิมพ์ไม่ทันนน', '2024-03-06 16:48:19', 1, 0),
+(5, 'sadsad', '2024-03-06 16:58:35', 1, 0),
+(6, 'asd', '2024-03-06 16:59:27', 1, 0),
+(7, 'asdfff', '2024-03-06 17:02:43', 1, 3),
+(8, 'askafjsa\r\n', '2024-03-06 17:03:18', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -61,6 +84,15 @@ CREATE TABLE `post` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`id`, `title`, `content`, `post_date`, `cat_id`, `user_id`) VALUES
+(1, 'ทำยังไงให้สอบผ่านนน', 'ควรอ่านหนังสือให้มากๆๆๆ', '2024-03-06 15:36:32', 2, 1),
+(2, 'อยากเล่นบอลเก่ง', 'แต่เล่นไม่เป็นนนเลย', '2024-03-06 15:42:45', 3, 1),
+(3, 'พิมพ์โปรแกรมตามอาจารย์ไม่ทัยเลย', 'การเรียนเขียนโปรแกรม', '2024-03-06 16:12:18', 2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +108,14 @@ CREATE TABLE `user` (
   `email` varchar(32) NOT NULL,
   `role` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `login`, `password`, `name`, `gender`, `email`, `role`) VALUES
+(1, 'ging', '8cb2237d0679ca88db6464eac60da96345513964', 'เดสดม สาวน้อยย', 'f', '01ging@gmail.com', 'm'),
+(2, 'kanok', '83787f060a59493aefdcd4b2369990e7303e186e', 'จิดจี้ มามา', 'o', '01kanok@gmail.com', 'm');
 
 --
 -- Indexes for dumped tables
@@ -113,25 +153,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
