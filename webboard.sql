@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2024 at 11:05 AM
+-- Generation Time: Mar 13, 2024 at 10:39 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -66,8 +66,9 @@ INSERT INTO `comment` (`id`, `content`, `post_date`, `user_id`, `post_id`) VALUE
 (4, 'เราพิมพ์ไม่ทันนน', '2024-03-06 16:48:19', 1, 0),
 (5, 'sadsad', '2024-03-06 16:58:35', 1, 0),
 (6, 'asd', '2024-03-06 16:59:27', 1, 0),
-(7, 'asdfff', '2024-03-06 17:02:43', 1, 3),
-(8, 'askafjsa\r\n', '2024-03-06 17:03:18', 1, 3);
+(9, 'อ่านเยอะๆๆสิจ๊ะ', '2024-03-13 15:39:06', 3, 4),
+(10, 'ทำไมไม่อาบบ\r\n', '2024-03-13 15:45:41', 3, 5),
+(11, 'ก็ขี้เกลียจ', '2024-03-13 15:45:58', 3, 5);
 
 -- --------------------------------------------------------
 
@@ -89,9 +90,8 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `title`, `content`, `post_date`, `cat_id`, `user_id`) VALUES
-(1, 'ทำยังไงให้สอบผ่านนน', 'ควรอ่านหนังสือให้มากๆๆๆ', '2024-03-06 15:36:32', 2, 1),
-(2, 'อยากเล่นบอลเก่ง', 'แต่เล่นไม่เป็นนนเลย', '2024-03-06 15:42:45', 3, 1),
-(3, 'พิมพ์โปรแกรมตามอาจารย์ไม่ทัยเลย', 'การเรียนเขียนโปรแกรม', '2024-03-06 16:12:18', 2, 1);
+(4, 'ทำไงให้เรียนเก่ง', 'อ่านหนังสือไม่เข้าใจ', '2024-03-13 15:31:43', 2, 3),
+(5, 'อยากอาบน้ำ', 'กิ้วววว', '2024-03-13 15:45:29', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `login`, `password`, `name`, `gender`, `email`, `role`) VALUES
 (1, 'ging', '8cb2237d0679ca88db6464eac60da96345513964', 'เดสดม สาวน้อยย', 'f', '01ging@gmail.com', 'm'),
-(2, 'kanok', '83787f060a59493aefdcd4b2369990e7303e186e', 'จิดจี้ มามา', 'o', '01kanok@gmail.com', 'm');
+(2, 'kanok', '83787f060a59493aefdcd4b2369990e7303e186e', 'จิดจี้ มามา', 'o', '01kanok@gmail.com', 'm'),
+(3, 'admin', '8dc9fa69ec51046b4472bb512e292d959edd2aef', 'สิริ สุข', 'f', 'admin@gmail.com', 'a');
 
 --
 -- Indexes for dumped tables
@@ -159,19 +160,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
