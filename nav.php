@@ -16,6 +16,12 @@
             <i class="bi bi-person-lines-fill"></i> <?php echo $_SESSION['username']; ?>
           </a>
           <ul class="dropdown-menu">
+          <?php
+             if($_SESSION['role']=='a'){
+                 echo "<li><a class='dropdown-item' href='category.php'><i class='bi bi-bookmarks'></i> จัดการหมวดหมู่</a></li>";
+                 echo "<li><a class='dropdown-item' href='#'><i class='bi bi-person-check'></i> จัดการผู้ใช้งาน</a></li>";
+                 }
+              ?>
             <li><a class="dropdown-item" href="logout.php"><i class="bi bi-power"></i> ออกจากระบบ</a></li>
           </ul>
         </li>
